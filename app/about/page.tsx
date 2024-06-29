@@ -1,5 +1,5 @@
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const About = () => {
   return (
@@ -7,7 +7,7 @@ const About = () => {
       <Navbar />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;
