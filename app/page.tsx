@@ -74,7 +74,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex h-full w-full flex-col items-center justify-between bg-[#F7CD35]">
+        <div className="flex h-full w-full flex-col items-center justify-between gap-32 bg-[#F7CD35]">
           <svg
             width="200"
             height="97"
