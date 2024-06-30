@@ -30,9 +30,9 @@ const reviews = [
 
 export default function Home() {
   return (
-    <main className="divide-y-2 divide-[#121321] bg-[#FEF7F6]">
-      <section className="flex flex-col px-4 md:flex-row md:items-center md:justify-between md:px-[6.25rem]">
-        <div className="max-w-lg space-y-8 py-24">
+    <main className="divide-y-2 divide-[#121321] border-b-2 border-[#121321] bg-[#FEF7F6]">
+      <section className="flex flex-col px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[6.25rem] md:py-16">
+        <div className="max-w-lg space-y-8">
           <h1
             className={`${riffic.className} text-center text-4xl leading-[1.2] md:text-left`}
           >
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0">
-        <div className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem] md:py-44">
+        <div className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem] md:py-[10.75rem]">
           <h2
             className={`${riffic.className} text-center text-4xl leading-[1.2] md:text-left`}
           >
@@ -74,7 +74,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex h-full w-full flex-col items-center justify-between gap-32 bg-[#F7CD35]">
+        <div className="flex h-full min-h-80 w-full flex-col items-center justify-between bg-[#F7CD35]">
           <svg
             width="200"
             height="97"
@@ -151,7 +151,7 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="flex justify-center bg-[#000000]">
+          <div className="flex min-h-44 justify-center bg-[#000000]">
             <svg
               width="140"
               height="66"
@@ -181,7 +181,7 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="flex items-end justify-center bg-[#F8D0E0]">
+          <div className="flex min-h-44 items-end justify-center bg-[#F8D0E0]">
             <svg
               width="121"
               height="60"
@@ -307,45 +307,63 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex items-center justify-center bg-[#FEF7F6]">
-        <div className="max-w-lg space-y-4 py-24">
-          <h2
-            className={`${riffic.className} text-center text-4xl leading-[1.2]`}
-          >
-            We are a team of experts
-          </h2>
+      <section className="relative overflow-hidden bg-[#FEF7F6]">
+        <div className="flex items-center justify-center">
+          <div className="max-w-lg space-y-4 px-4 pb-12 pt-24 md:pb-0">
+            <h2
+              className={`${riffic.className} text-center text-4xl leading-[1.2]`}
+            >
+              We are a team of experts
+            </h2>
 
-          <p className="max-w-lg text-center leading-[1.5]">
-            We are dedicated to creating a nurturing environment where kids can
-            learn, play, and grow.
-          </p>
+            <p className="max-w-lg text-center leading-[1.5]">
+              We are dedicated to creating a nurturing environment where kids
+              can learn, play, and grow.
+            </p>
 
-          <div className="flex justify-center">
-            <Link className="flex font-medium" href="/contact">
-              Learn more
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.5 16.7362L18.7929 13.4433C19.1834 13.0528 19.1834 12.4196 18.7929 12.0291L15.5 8.73621"
-                  stroke="#121321"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M18.5 12.7362L4.5 12.7362"
-                  stroke="#121321"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </Link>
+            <div className="flex justify-center">
+              <Link className="flex font-medium" href="/contact">
+                Learn more
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.5 16.7362L18.7929 13.4433C19.1834 13.0528 19.1834 12.4196 18.7929 12.0291L15.5 8.73621"
+                    stroke="#121321"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M18.5 12.7362L4.5 12.7362"
+                    stroke="#121321"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
+
+        <svg
+          width="1440"
+          height="153"
+          viewBox="0 0 1440 153"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          // className="w-full"
+        >
+          <path
+            d="M-452 50.3884C-273.43 50.3884 -273.43 200.388 -94.8594 200.388C83.7109 200.388 83.7115 50.3884 262.283 50.3884C440.854 50.3884 440.853 200.388 619.424 200.388C797.993 200.388 797.993 50.3884 976.562 50.3884C1155.13 50.3884 1155.13 200.388 1333.7 200.388C1512.27 200.388 1512.27 50.3884 1690.84 50.3884C1869.41 50.3884 1869.41 200.388 2047.99 200.388C2226.56 200.388 2226.56 50.3884 2405.13 50.3884C2583.7 50.3884 2583.7 200.388 2762.27 200.388C2940.84 200.388 2940.84 50.3884 3119.42 50.3884C3297.99 50.3884 3297.99 200.388 3476.56 200.388C3655.13 200.388 3655.13 50.3884 3833.7 50.3884C4012.28 50.3884 4012.28 200.388 4190.85 200.388C4369.43 200.388 4369.43 50.3884 4548 50.3884"
+            stroke="black"
+            strokeWidth="100"
+            strokeMiterlimit="10"
+          />
+        </svg>
       </section>
 
       <section className="flex items-center justify-center bg-[#FDFDFD]">
