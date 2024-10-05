@@ -18,7 +18,12 @@ export default function Contact() {
             Book an appointment
           </h1>
 
-          <form className="space-y-6">
+          <form
+            action="https://.getform.io/f/pbgxxgya"
+            method="POST"
+            encType="multipart/form-data"
+            className="space-y-6"
+          >
             <div className="flex flex-col gap-2">
               <label className="text-black" htmlFor="name">
                 Name
@@ -39,13 +44,13 @@ export default function Contact() {
 
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
-                name="name"
+                name="email"
                 placeholder="Your email"
-                type="text"
+                type="email"
               />
             </div>
 
-            <div className="flex flex-col gap-2">
+            {/* <div className="flex flex-col gap-2">
               <label className="text-black" htmlFor="name">
                 Date
               </label>
@@ -56,16 +61,16 @@ export default function Contact() {
                 placeholder="Select date"
                 type="date"
               />
-            </div>
+            </div> */}
 
             <div className="flex flex-col gap-2">
-              <label className="text-black" htmlFor="name">
+              {/* <label className="text-black" htmlFor="name">
                 Date
-              </label>
+              </label> */}
 
               <textarea
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
-                name="name"
+                name="message"
                 placeholder="Write your description here"
               />
             </div>

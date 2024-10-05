@@ -15,13 +15,19 @@ const Footer = () => {
 
       <ul className="flex flex-col gap-7 md:flex-row">
         <li>
-          <Link href="/about">About</Link>
+          <Link className="ease-in-out hover:text-[#F59488]" href="/about">
+            About
+          </Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link className="ease-in-out hover:text-[#F59488]" href="/contact">
+            Contact
+          </Link>
         </li>
         <li>
-          <Link href="/terms">Terms</Link>
+          <Link className="ease-in-out hover:text-[#F59488]" href="/terms">
+            Terms
+          </Link>
         </li>
       </ul>
 

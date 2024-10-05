@@ -1,18 +1,8 @@
-"use client";
+import React from "react";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-
-import { cn } from "@/lib/utils";
-
-import Menu from "./Menu";
-
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+const test = () => {
   return (
-    <nav className="flex items-center justify-between border-b-[1.5px] bg-[#FDFDFD] px-4 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem] lg:border-[#121321]">
+    <nav className="flex items-center justify-between border-b-[1.5px] border-[#121321] bg-[#FDFDFD] px-4 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem]">
       <ul className="hidden md:flex md:gap-4">
         <li>
           <Link href="/about">About</Link>
@@ -38,19 +28,25 @@ const Navbar = () => {
       >
         {menuOpen ? (
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
             fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            className="lucide lucide-x"
+            xmlns="http://www.w3.org/2000/svg"
+            className="fill-text-dark"
           >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
+            <path
+              d="M14.9964 0.994202L1.00488 14.9857"
+              stroke="#F5F5F5"
+              strokeWidth="2"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M15.0003 14.9943L0.99707 0.988159"
+              stroke="#F5F5F5"
+              strokeWidth="2"
+              strokeLinejoin="round"
+            />
           </svg>
         ) : (
           <svg
@@ -86,4 +82,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default test;
