@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative h-[26rem] w-full md:w-[28rem]">
+        <div className="relative mt-8 h-[26rem] w-full md:w-[28rem]">
           <Image alt="" className="object-contain" fill src="/hero.png" />
         </div>
       </section>

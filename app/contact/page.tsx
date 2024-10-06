@@ -19,7 +19,6 @@ export default function Contact() {
           </h1>
 
           <form
-            action="https://.getform.io/f/pbgxxgya"
             method="POST"
             encType="multipart/form-data"
             className="space-y-6"
@@ -50,7 +49,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <label className="text-black" htmlFor="name">
                 Date
               </label>
@@ -61,12 +60,12 @@ export default function Contact() {
                 placeholder="Select date"
                 type="date"
               />
-            </div> */}
+            </div>
 
             <div className="flex flex-col gap-2">
-              {/* <label className="text-black" htmlFor="name">
-                Date
-              </label> */}
+              <label className="text-black" htmlFor="name">
+                Message
+              </label>
 
               <textarea
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"

@@ -12,7 +12,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between border-b-[1.5px] bg-[#FDFDFD] px-4 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem] lg:border-[#121321]">
+    <nav className="flex items-center justify-between border-b-[1.5px] bg-[#FDFDFD] px-6 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem] lg:border-[#121321]">
       <ul className="hidden md:flex md:gap-4">
         <li>
           <Link href="/about">About</Link>
