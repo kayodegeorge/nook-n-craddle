@@ -1,6 +1,7 @@
+"use client";
+
 import localFont from "next/font/local";
-import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
 
 const riffic = localFont({
   src: "../../fonts/riffic-free.ttf",
@@ -8,6 +9,32 @@ const riffic = localFont({
 });
 
 export default function Contact() {
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkonwlk", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("Thanks for your submission, we will get back to you");
+        form.reset();
+      } else {
+        setStatus("Oops! There was a problem submitting your details");
+      }
+    } catch (error) {
+      setStatus("Oops! There was a problem submitting your details");
+    }
+  };
   return (
     <main className="bg-[#FEF7F6]">
       <section className="flex items-center justify-center px-4 py-24">
@@ -19,8 +46,8 @@ export default function Contact() {
           </h1>
 
           <form
-            method="POST"
-            encType="multipart/form-data"
+            // method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
             <div className="flex flex-col gap-2">
@@ -33,6 +60,7 @@ export default function Contact() {
                 name="name"
                 placeholder="Full name"
                 type="text"
+                id="name"
               />
             </div>
 
@@ -43,6 +71,7 @@ export default function Contact() {
 
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
+                id="email"
                 name="email"
                 placeholder="Your email"
                 type="email"
@@ -56,9 +85,10 @@ export default function Contact() {
 
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
-                name="name"
-                placeholder="Select date"
                 type="date"
+                id="date"
+                name="date"
+                placeholder="Select date"
               />
             </div>
 
@@ -70,6 +100,7 @@ export default function Contact() {
               <textarea
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
                 name="message"
+                id="message"
                 placeholder="Write your description here"
               />
             </div>
@@ -80,6 +111,11 @@ export default function Contact() {
             >
               Book appointment
             </button>
+            {status && (
+              <p className="text-pretty text-lg font-semibold text-green-600">
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </section>

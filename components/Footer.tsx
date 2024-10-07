@@ -33,7 +33,7 @@ const Footer = () => {
 
       <div className="flex items-center gap-4">
         <a
-          className="rounded-full border border-[#121321] bg-[#FDFDFD] px-3 py-3"
+          className="rounded-full border border-[#121321] bg-[#FDFDFD] px-3 py-3 transition-all duration-300 ease-in-out hover:translate-y-[-10px] hover:bg-primary-black hover:text-white"
           href="https://www.facebook.com/nookncradle"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,12 +41,12 @@ const Footer = () => {
           Instagram
         </a>
         <a
-          className="rounded-full border border-[#121321] bg-[#FDFDFD] px-3 py-3"
+          className="rounded-full border border-[#121321] bg-[#FDFDFD] px-3 py-3 transition-all duration-300 ease-in-out hover:translate-y-[-10px] hover:bg-primary-black hover:text-white"
           href="https://www.facebook.com/nookncradle"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Twitter
+          Facebook
         </a>
       </div>
     </footer>

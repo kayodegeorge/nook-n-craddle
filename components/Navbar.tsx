@@ -15,10 +15,20 @@ const Navbar = () => {
     <nav className="flex items-center justify-between border-b-[1.5px] bg-[#FDFDFD] px-6 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem] lg:border-[#121321]">
       <ul className="hidden md:flex md:gap-4">
         <li>
-          <Link href="/about">About</Link>
+          <Link
+            className="duration-600 transition-all ease-in-out hover:translate-y-[-10px] hover:text-button"
+            href="/about"
+          >
+            About
+          </Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link
+            className="duration-600 transition-all ease-in-out hover:translate-y-[-10px] hover:text-button"
+            href="/contact"
+          >
+            Contact
+          </Link>
         </li>
       </ul>
 

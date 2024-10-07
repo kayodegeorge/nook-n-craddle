@@ -14,8 +14,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Nook n Cradle",
-  description: "Trustworthy care for your little ones.",
+  title: "Nook n Craddle",
+  description:
+    "Looking for professional babysitters? Nook n Craddle offers trusted, reliable, and flexible babysitting services. Find experienced caregivers and book childcare with ease today!",
 };
 
 export default function RootLayout({
