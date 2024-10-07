@@ -106,6 +106,7 @@ export default function Home() {
           ))}
         </div>
       </section> */}
+
       <AnimatedReviewsSection />
 
       {/* <section className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0">

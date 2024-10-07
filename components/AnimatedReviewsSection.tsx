@@ -40,16 +40,18 @@ const AnimatedReviewsSection = () => {
           controls.start("visible");
         }
       },
-      { threshold: 0.1 }, // Trigger when 10% of the section is visible
+      { threshold: 0.1 },
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [controls]);
@@ -82,8 +84,11 @@ const AnimatedReviewsSection = () => {
   ];
 
   return (
-    <section
+    <motion.section
       ref={sectionRef}
+      initial="hidden"
+      animate={controls}
+      variants={{}}
       className="flex justify-center px-4 py-24 md:px-[6.25rem] md:py-32"
     >
       <div className="bg-[#FEF7F6]1 grid grid-cols-1 gap-7 md:grid-cols-3">
@@ -105,7 +110,7 @@ const AnimatedReviewsSection = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
