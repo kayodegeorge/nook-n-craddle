@@ -67,18 +67,36 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="flex justify-center py-24 md:py-32">
-        <div className="flex flex-col items-center gap-16 bg-[#FEF7F6] md:flex-row">
-          <div className="relative h-[200px] w-[200px] rounded-full">
-            <Image src="/img-2.png" alt="" fill />
+      <section className="flex justify-center py-20 md:py-32">
+        <div className="flex flex-col items-center bg-[#FEF7F6] md:flex-row">
+          <div className="">
+            <Image
+              className="object-contain"
+              src="/pic-interlude-1.png"
+              alt=""
+              width={400}
+              height={200}
+            />
           </div>
 
-          <div className="relative h-[200px] w-[200px] rounded-full">
-            <Image src="/img-2.png" alt="" fill />
+          <div className="">
+            <Image
+              className="object-contain"
+              src="/pic-interlude-2.png"
+              alt=""
+              width={400}
+              height={200}
+            />
           </div>
 
-          <div className="relative h-[200px] w-[200px] rounded-full">
-            <Image src="/img-2.png" alt="" fill />
+          <div className="">
+            <Image
+              className="object-contain"
+              src="/pic-interlude-3.png"
+              alt=""
+              width={400}
+              height={200}
+            />
           </div>
         </div>
       </section>
@@ -88,7 +106,7 @@ export default function Home() {
       <AnimatedAgeSection />
 
       {/* <section className="flex justify-center px-4 py-24 md:px-[6.25rem] md:py-32">
-        <div className="bg-[#FEF7F6]1 grid grid-cols-1 gap-7 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-7 bg-[#FEF7F6] md:grid-cols-3">
           {reviews.map((review) => (
             <div
               className="space-y-4 rounded-lg border-2 border-[#121321] bg-[#FDFDFD] px-6 pb-14 pt-8 drop-shadow-[8_8_0_rgba(18,19,33,1)]"
@@ -172,7 +190,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-[#FEF7F6]">
         <div className="flex items-center justify-center">
-          <div className="max-w-lg space-y-4 px-4 pb-12 pt-24 md:pb-0">
+          <div className="max-w-lg space-y-4 px-4 pb-12 pt-28 md:pb-0">
             <h2
               className={`${riffic.className} text-center text-4xl leading-[1.2]`}
             >
@@ -187,7 +205,7 @@ export default function Home() {
             <div className="flex justify-center">
               <Link
                 className="flex font-medium hover:text-button"
-                href="/contact"
+                href="/about"
               >
                 Learn more
                 <svg

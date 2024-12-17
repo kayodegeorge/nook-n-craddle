@@ -2,14 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
 import Menu from "./Menu";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname, searchParams]);
 
   return (
     <nav className="flex items-center justify-between border-b-[1.5px] bg-[#FDFDFD] px-6 py-6 pl-4 md:border-b-2 md:p-0 md:pl-[6.25rem] lg:border-[#121321]">
@@ -34,10 +41,10 @@ const Navbar = () => {
 
       <Link href="/">
         <Image
-          src="/logo.svg"
-          alt="Nook N Cradle Logo"
-          width={180}
-          height={24}
+          src="/logo-1-black.png"
+          alt="Nook N Craddle Logo"
+          width={150}
+          height={50}
         />
       </Link>
 

@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import React from "react";
 
@@ -8,19 +8,6 @@ const riffic = localFont({
 });
 
 const AnimatedFlexibleSchedulingSection = () => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -31,37 +18,26 @@ const AnimatedFlexibleSchedulingSection = () => {
   };
 
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0"
-    >
-      <motion.div
-        variants={itemVariants}
-        className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem] md:py-[10.75rem]"
-      >
+    <section className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0">
+      <div className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem] md:py-[10.75rem]">
         <motion.h2
+          initial="hidden"
+          animate="visible"
           variants={itemVariants}
           className={`${riffic.className} text-center text-4xl leading-[1.2] md:text-left`}
         >
           Flexible scheduling
         </motion.h2>
-        <motion.p
-          variants={itemVariants}
-          className="mt-3 max-w-lg text-center md:text-left"
-        >
+        <p className="mt-3 max-w-lg text-center md:text-left">
           Tailored to meet your needs, we offer adaptable babysitting schedules
           to accommodate your unique requirements and ensure convenience for
           your family.
-        </motion.p>
-      </motion.div>
-      <motion.div
-        variants={itemVariants}
-        className="flex h-full min-h-80 w-full flex-col items-center justify-between bg-[#F7CD35]"
-      >
+        </p>
+      </div>
+      <div className="flex h-full min-h-80 w-full flex-col items-center justify-between bg-[#F7CD35]">
         <motion.svg
+          initial="hidden"
+          animate="visible"
           variants={itemVariants}
           width="200"
           height="97"
@@ -77,6 +53,8 @@ const AnimatedFlexibleSchedulingSection = () => {
           />
         </motion.svg>
         <motion.svg
+          initial="hidden"
+          animate="visible"
           variants={itemVariants}
           width="200"
           height="99"
@@ -89,8 +67,8 @@ const AnimatedFlexibleSchedulingSection = () => {
             fill="black"
           />
         </motion.svg>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };
 

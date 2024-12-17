@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import localFont from "next/font/local";
 import React from "react";
 
@@ -8,19 +8,6 @@ const riffic = localFont({
 });
 
 const AnimatedSafeSection = () => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -30,40 +17,54 @@ const AnimatedSafeSection = () => {
     },
   };
 
+  const bouncyCircleVariants = {
+    animate: {
+      y: [0, -20, 0],
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const rotatingXVariants = {
+    animate: {
+      rotate: 360,
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    },
+  };
+
   return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0"
-    >
-      <motion.div
-        variants={itemVariants}
-        className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem]"
-      >
+    <section className="grid grid-cols-1 divide-y-2 divide-[#121321] md:grid-cols-2 md:divide-x-2 md:divide-y-0">
+      <div className="w-full bg-[#FDFDFD] px-4 py-28 md:px-[6.25rem]">
         <motion.h2
-          className={`${riffic.className} text-center text-4xl leading-[1.2] md:text-left`}
+          initial="hidden"
+          animate="visible"
           variants={itemVariants}
+          className={`${riffic.className} text-center text-4xl leading-[1.2] md:text-left`}
         >
           Safe and clean environment
         </motion.h2>
-        <motion.p
-          variants={itemVariants}
-          className="mt-3 max-w-lg text-center md:text-left"
-        >
+        <p className="mt-3 max-w-lg text-center md:text-left">
           Our priority is providing a secure and hygienic setting. We ensure a
           safe and clean environment for your peace of mind and your childs
           well-being.
-        </motion.p>
-      </motion.div>
-      <motion.div
-        variants={itemVariants}
-        className="flex h-full w-full items-center justify-center bg-[#F8D0E0]"
-      >
-        <motion.div className="flex flex-col gap-14 md:flex-row">
+        </p>
+      </div>
+      <div className="flex h-full w-full items-center justify-center bg-[#F8D0E0]">
+        <div className="flex flex-col gap-14 md:flex-row">
           <motion.svg
-            variants={itemVariants}
+            initial="hidden"
+            animate={["visible", "animate"]}
+            variants={{
+              ...itemVariants,
+              ...bouncyCircleVariants,
+            }}
             width="140"
             height="140"
             viewBox="0 0 140 140"
@@ -77,7 +78,12 @@ const AnimatedSafeSection = () => {
           </motion.svg>
 
           <motion.svg
-            variants={itemVariants}
+            initial="hidden"
+            animate={["visible", "animate"]}
+            variants={{
+              ...itemVariants,
+              ...rotatingXVariants,
+            }}
             width="140"
             height="140"
             viewBox="0 0 140 140"
@@ -91,7 +97,12 @@ const AnimatedSafeSection = () => {
           </motion.svg>
 
           <motion.svg
-            variants={itemVariants}
+            initial="hidden"
+            animate={["visible", "animate"]}
+            variants={{
+              ...itemVariants,
+              ...bouncyCircleVariants,
+            }}
             width="140"
             height="140"
             viewBox="0 0 140 140"
@@ -103,9 +114,9 @@ const AnimatedSafeSection = () => {
               fill="black"
             />
           </motion.svg>
-        </motion.div>
-      </motion.div>
-    </motion.section>
+        </div>
+      </div>
+    </section>
   );
 };
 

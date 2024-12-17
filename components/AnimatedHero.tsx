@@ -9,7 +9,7 @@ const AnimatedHeroSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[6.25rem] md:py-16">
+    <section className="flex flex-col px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[5rem] md:py-16">
       <div className="max-w-lg space-y-8">
         <h1
           className={`duration-900 text-center text-4xl font-bold leading-[1.2] transition-all ease-out md:text-left ${
@@ -45,12 +45,17 @@ const AnimatedHeroSection = () => {
         </div>
       </div>
       <div
-        className={`duration-600 relative mt-8 h-[26rem] w-full transition-all ease-out md:w-[28rem] ${
+        className={`duration-600 relative mt-8 h-[30rem] w-full transition-all ease-out md:w-[40rem] ${
           isVisible ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
         }`}
         style={{ transitionDelay: "800ms" }}
       >
-        <Image alt="" className="object-contain" fill src="/hero.png" />
+        <Image
+          alt="Hero pic"
+          className="object-contain"
+          fill
+          src="/landing-pic.png"
+        />
       </div>
     </section>
   );

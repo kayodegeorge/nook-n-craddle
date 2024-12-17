@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-12 bg-[#FEF7F6] px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[6.25rem] md:py-[4.5rem]">
+    <footer className="flex flex-col gap-12 bg-[#FEF7F6] px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[6.25rem] md:py-[2rem]">
       <Link href="/">
         <Image
-          src="/logo.svg"
-          alt="Nook N Cradle Logo"
-          width={297}
+          src="/logo-1-black.png"
+          alt="Nook N Craddle Logo"
+          width={200}
           height={41}
         />
       </Link>

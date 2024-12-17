@@ -10,9 +10,11 @@ const riffic = localFont({
 
 export default function Contact() {
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const form = e.target;
     const data = new FormData(form);
 
@@ -33,8 +35,11 @@ export default function Contact() {
       }
     } catch (error) {
       setStatus("Oops! There was a problem submitting your details");
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
   return (
     <main className="bg-[#FEF7F6]">
       <section className="flex items-center justify-center px-4 py-24">
@@ -45,74 +50,73 @@ export default function Contact() {
             Book an appointment
           </h1>
 
-          <form
-            // method="POST"
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="flex flex-col gap-2">
               <label className="text-black" htmlFor="name">
                 Name
               </label>
-
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
                 name="name"
                 placeholder="Full name"
                 type="text"
                 id="name"
+                required
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-black" htmlFor="name">
+              <label className="text-black" htmlFor="email">
                 Email
               </label>
-
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
                 id="email"
                 name="email"
                 placeholder="Your email"
                 type="email"
+                required
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-black" htmlFor="name">
+              <label className="text-black" htmlFor="date">
                 Date
               </label>
-
               <input
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
                 type="date"
                 id="date"
                 name="date"
-                placeholder="Select date"
+                required
               />
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-black" htmlFor="name">
+              <label className="text-black" htmlFor="message">
                 Message
               </label>
-
               <textarea
                 className="rounded-lg border-2 border-black bg-transparent p-4 placeholder-[#B4B4B4]"
                 name="message"
                 id="message"
                 placeholder="Write your description here"
+                required
               />
             </div>
 
             <button
-              className="w-full rounded-lg border-2 border-[#121321] bg-[#F59488] px-9 py-5 font-medium"
+              className={`w-full rounded-lg border-2 border-[#121321] bg-[#F59488] px-9 py-5 font-medium ${
+                isSubmitting ? "cursor-not-allowed opacity-70" : ""
+              }`}
               type="submit"
+              disabled={isSubmitting}
             >
-              Book appointment
+              {isSubmitting ? "Submitting..." : "Book appointment"}
             </button>
+
             {status && (
-              <p className="text-pretty text-lg font-semibold text-green-600">
+              <p className="text-pretty text-lg font-semibold text-[#F59488]">
                 {status}
               </p>
             )}

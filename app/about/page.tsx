@@ -61,8 +61,13 @@ export default function About() {
           </div>
         </div>
 
-        <div className="relative h-[32rem] w-full md:w-[28rem]">
-          <Image alt="" className="object-contain" fill src="/baby.png" />
+        <div className="relative h-[32rem] w-full md:w-[35rem]">
+          <Image
+            alt="About us image"
+            className="object-contain"
+            fill
+            src="/about-us-hero.png"
+          />
         </div>
       </section>
 
@@ -70,7 +75,7 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-[#FEF7F6]">
         <div className="flex items-center justify-center">
-          <div className="max-w-lg space-y-4 px-4 pb-12 pt-24 md:pb-0">
+          <div className="max-w-lg space-y-4 px-4 pb-12 pt-28 md:pb-0">
             <h2
               className={`${riffic.className} text-center text-4xl leading-[1.2]`}
             >
@@ -83,7 +88,7 @@ export default function About() {
             </p>
 
             <div className="flex justify-center hover:text-button">
-              <Link className="flex font-medium" href="/contact">
+              <Link className="flex font-medium" href="/about">
                 Learn more
                 <svg
                   width="25"
