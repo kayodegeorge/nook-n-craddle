@@ -28,13 +28,13 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setStatus("Thanks for your submission, we will get back to you");
+        setStatus("Thanks for your submission, we will get back to you!");
         form.reset();
       } else {
-        setStatus("Oops! There was a problem submitting your details");
+        setStatus("Oops! There was a problem submitting your details!");
       }
     } catch (error) {
-      setStatus("Oops! There was a problem submitting your details");
+      setStatus("Oops! There was a problem submitting your details!");
     } finally {
       setIsSubmitting(false);
     }

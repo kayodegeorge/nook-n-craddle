@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="flex flex-col gap-12 bg-[#FEF7F6] px-4 py-24 md:flex-row md:items-center md:justify-between md:px-[6.25rem] md:py-[2rem]">
       <Link href="/">
         <Image
-          src="/logo-1-black.png"
+          src="/logo-again.png"
           alt="Nook N Craddle Logo"
           width={200}
           height={41}

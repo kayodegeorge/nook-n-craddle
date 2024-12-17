@@ -41,10 +41,10 @@ const Navbar = () => {
 
       <Link href="/">
         <Image
-          src="/logo-1-black.png"
+          src="/logo-again.png"
           alt="Nook N Craddle Logo"
           width={150}
-          height={50}
+          height={10}
         />
       </Link>
 
